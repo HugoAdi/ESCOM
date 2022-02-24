@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include <time.h>
 
+/*
+INSTITUTO POLITÉCNICO NACIONAL
+ESCUELA SUPERIOR DE CÓMPUTO
+Análisis de Algoritmos
+GRUPO: 3CV12
+ALUMNOS:
+    Jimenez Martinez Hugo Adi
+PROFESOR: Luna Benoso Benjamín
+FECHA: 25/Febrero/2022
+*/
+
 int encontrarNumeros(int *array,int n,int *ct){
     int i,j;
     (*ct)++; //Declaracion i
