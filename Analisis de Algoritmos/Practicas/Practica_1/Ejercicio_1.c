@@ -10,6 +10,7 @@ Análisis de Algoritmos
 GRUPO: 3CV12
 ALUMNOS:
     Jimenez Martinez Hugo Adi
+    Castillo González Bruno
 PROFESOR: Luna Benoso Benjamín
 FECHA: 25/Febrero/2022
 */
