@@ -11,7 +11,7 @@ GRUPO: 3CV12
 ALUMNOS:
     Jimenez Martinez Hugo Adi
 PROFESOR: Luna Benoso Benjamín
-FECHA: 25/Febrero/2022
+FECHA: 28/Febrero/2022
 */
 
 int encontrarNumeros(int *array,int n,int *ct){
@@ -92,8 +92,8 @@ int main(){
     fpt = fopen("posteriori.csv","w+"); //Invocamos el archivo csv y lo asignamos a nuestro ftp
     for(k=0;k<num_ordendas;k++){
         int ct = 0;
-        generarArreglo_Random(&array,k); //Generamos nuestro arreglo con elementos aleatorios
-        generarArreglo_mejorCaso(&array,k); //Generamos nuestro arreglo basandonos en el mejor caso del algoritmo
+        //generarArreglo_Random(&array,k); //Generamos nuestro arreglo con elementos aleatorios
+        //generarArreglo_mejorCaso(&array,k); //Generamos nuestro arreglo basandonos en el mejor caso del algoritmo
         generarArreglo_peorCaso(&array,k); //Generamos nuestro arreglo basandonos en el peor caso del algoritmo
         imprimirArreglo(array,k); //Imprimimos el arreglo
         printf("Se encontro %d\n",encontrarNumeros(array,k,&ct)); //Ejectuamos el algoritmo de busqueda
