@@ -33,16 +33,17 @@ int fib(int n){
 }
 
 int main(){
-    int num_ordenadas, i, ct, mcd;
+    int num_ordenadas, i, ct, mcd,max;
     num_ordenadas = 40;
     ct = 0;
     FILE *fpt; //Puntero del archivo csv
     fpt = fopen("posteriori_MCD.csv","w+"); //Invocamos el archivo csv y lo asignamos a nuestro ftp
     for(i=0;i<num_ordenadas;i++){
-        mcd = MCD(fib(i),fib(i+1),&ct); //Buscamos el MCD con el peor caso, el cual son los numeros consecutivos de fibonacci
+        max = fib(i+1); //Variable auxiliar para graficar el numero mas grande de fibonacci
+        mcd = MCD(fib(i),max,&ct); //Buscamos el MCD con el peor caso, el cual son los numeros consecutivos de fibonacci
         //mcd = MCD(i,i,&ct); //Buscamos el MCD para el mejor caso, que es donde a = b
-        //printf("El MCD de %d y %d es: %d  \n",fib(i),fib(i+1),mcd); //Imprimimos en consola el resultado
-        fprintf(fpt,"%d,%d \n",i,ct); //Imprimimos los resultados en el archivo csv
+        printf("El MCD de %d y %d es: %d  \n",fib(i),max,mcd); //Imprimimos en consola el resultado
+        fprintf(fpt,"%d,%d \n",max,ct); //Imprimimos los resultados en el archivo csv
     }
     fclose(fpt); //Cerramos el archivo
     return 0;

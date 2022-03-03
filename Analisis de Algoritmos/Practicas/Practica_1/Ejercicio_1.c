@@ -87,15 +87,15 @@ void imprimirArreglo(int *array,int n){
 int main(){
     int *array;
     int k;
-    int num_ordendas = 800; //Inicializamos variables
+    int num_ordendas = 10; //Inicializamos variables
     array = NULL; //Apuntamos a Nulo
     FILE *fpt; //Puntero del archivo csv
     fpt = fopen("posteriori.csv","w+"); //Invocamos el archivo csv y lo asignamos a nuestro ftp
     for(k=0;k<num_ordendas;k++){
         int ct = 0;
-        //generarArreglo_Random(&array,k); //Generamos nuestro arreglo con elementos aleatorios
+        generarArreglo_Random(&array,k); //Generamos nuestro arreglo con elementos aleatorios
         //generarArreglo_mejorCaso(&array,k); //Generamos nuestro arreglo basandonos en el mejor caso del algoritmo
-        generarArreglo_peorCaso(&array,k); //Generamos nuestro arreglo basandonos en el peor caso del algoritmo
+        //generarArreglo_peorCaso(&array,k); //Generamos nuestro arreglo basandonos en el peor caso del algoritmo
         imprimirArreglo(array,k); //Imprimimos el arreglo
         printf("Se encontro %d\n",encontrarNumeros(array,k,&ct)); //Ejectuamos el algoritmo de busqueda
         fprintf(fpt,"%d,%d \n",k,ct); //Imprimimos los resultados en el archivo csv
