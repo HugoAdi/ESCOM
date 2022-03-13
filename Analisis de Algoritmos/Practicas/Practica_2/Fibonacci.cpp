@@ -1,6 +1,16 @@
 #include <iostream>
-#include <string.h>
-#include <math.h>
+
+/*
+INSTITUTO POLITÉCNICO NACIONAL
+ESCUELA SUPERIOR DE CÓMPUTO
+Análisis de Algoritmos
+GRUPO: 3CV12
+ALUMNOS:
+    Jimenez Martinez Hugo Adi
+    Castillo González Bruno
+PROFESOR: Luna Benoso Benjamín
+FECHA: 14/Marzo/2022
+*/
 
 using namespace std;
 
@@ -18,7 +28,7 @@ int fibonacci_Recursivo(int n,int *ct){
     }
 }
 
-int fibonacci_Iterativo(int n, int *ct){
+void fibonacci_Iterativo(int n, int *ct){
     int siguiente = 1; (*ct)++; //Declaracion y asignacion de variable
     int actual = 0; (*ct)++; //Declaracion y asignacion de variable
     int aux = 0; (*ct)++; //Declaracion y asignacion de variable
@@ -27,9 +37,10 @@ int fibonacci_Iterativo(int n, int *ct){
         (*ct)++; //Comparacion del for
         aux = actual; (*ct)++; //Asignacion de valor
         actual = siguiente; (*ct)++; //Asignacion de valor
-        siguiente += aux; (*ct)++; //Asignacion de valor
+        siguiente = siguiente + aux; (*ct)++; //Asignacion de valor
+        (*ct)++; //Incremento de i
     }
-    return actual; (*ct)++; //Sentencia return con el valor fibonaccix
+    (*ct)++; //Comparacion falsa del for
 }
 
 int main(){
@@ -37,9 +48,9 @@ int main(){
     cin>>num_Ordenadas;
     FILE *fpt; //Puntero del archivo csv
     fpt = fopen("Fibonacci.csv","w+"); //Invocamos el archivo csv y lo asignamos a nuestro ftp
-    for(int i=0;i<num_Ordenadas;i++){
+    for(int i=1;i<num_Ordenadas;i++){
         int ct=0;
-        fibonacci_Recursivo(i,&ct);
+        fibonacci_Iterativo(i,&ct);
         fprintf(fpt,"%d,%d \n",i,ct); //Imprimimos los resultados en el archivo csv
     }
     fclose(fpt); //Cerramos el archivo css
