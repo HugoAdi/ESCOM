@@ -15,7 +15,7 @@ FECHA: 14/Marzo/2022
 using namespace std;
 
 int fibonacci_Recursivo(int n,int *ct){
-    if(n<=1){
+    if(n<=1){+
         (*ct)++; //Sentencia if es verdadera
         (*ct)++; //Sentencia return
         return n; 
